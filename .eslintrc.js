@@ -5,7 +5,7 @@ module.exports = {
     },
     extends: [
         'plugin:vue/essential',
-        '@vue/standard'
+        // '@vue/standard'
     ],
     parserOptions: {
         parser: 'babel-eslint'
@@ -13,8 +13,7 @@ module.exports = {
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-        // 'no-multiple-empty-lines': 0,
-        // 'indent': ['off', 2],
-
+        // "no-console": "off",
+        // "no-unused-vars": "off", //重要 var 变量为引入
     }
 }

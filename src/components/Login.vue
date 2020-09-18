@@ -35,18 +35,17 @@
   </div>
 </template>
 
-
 <script>
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
-      //数据绑定对象
+      // 数据绑定对象
       loginForm: {
         username: 'admin',
         password: '123456'
       },
-      //表单验证
+      // 表单验证
       loginFormRules: {
         username: [
           { required: true, message: '请输入登录名', trigger: 'blur' },
@@ -60,18 +59,18 @@ export default {
     }
   },
   methods: {
-    //表单重置按钮
-    resetLoginForm() {
+    // 表单重置按钮
+    resetLoginForm () {
       //   console.log(this)
       this.$refs.loginFormRef.resetFields()
     },
-    //表单提交验证
-    login() {
+    // 表单提交验证
+    login () {
       this.$refs.loginFormRef.validate(async valid => {
         //   console.log(valid)
         if (!valid) return false
-        //发起请求
-        //{data:res}解构赋值
+        // 发起请求
+        // {data:res}解构赋值
         const { data: res } = await this.$http.post('login', this.loginForm)
         //   console.log(res);
         if (res.meta.status !== 200) return this.$message.error('登录失败')
