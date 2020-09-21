@@ -67,7 +67,7 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="queryInfo.pagenum"
-        :page-sizes="[1 ,2, 5, 510]"
+        :page-sizes="[1 ,2, 5, 10]"
         :page-size="queryInfo.pagesize"
         background
         layout="total, sizes, prev, pager, next, jumper"
@@ -171,7 +171,7 @@ export default {
       queryInfo: {
         query: '',
         pagenum: 1,
-        pagesize: 2
+        pagesize: 3
       },
       userlist: [],
       total: 0,
@@ -256,7 +256,7 @@ export default {
       this.queryInfo.pagenum = newPage
       this.getUserList()
     },
-    //监听 switc开关的改变
+    //监听 switch开关的改变
     async userStateChange(userInfo) {
       // console.log(userInfo)
       const { data: res } = await this.$http.put(
